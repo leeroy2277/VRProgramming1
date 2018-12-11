@@ -9,3 +9,4 @@ for a in range(26):
         print(str(a)+":"+"buzz")
         continue
     print(str(a)+":")
+
