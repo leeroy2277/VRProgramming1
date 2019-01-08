@@ -110,7 +110,20 @@ class Order:
 
                 total_pst = total_pst + item.get_item_prov_tax_amount()
 
-        return float(total_pst)
+        return (total_pst)
+
+    def get_total_price(self):
+
+        total_price = 0
+
+        for item in self.items:
+
+            total_price = total_price + item.get_item_base_price()
+
+        return (total_price)
+
+
+
 
 # TEST
 
@@ -125,6 +138,8 @@ o.add_item(it2)
 
 print ("Total GST on the order is " + str(o.get_total_gst()))
 print ("Total PST on the order is " + str(o.get_total_pst()))
+print ("Total price on the order is " + str(o.get_total_price()))
+
 
 # TEST
 
