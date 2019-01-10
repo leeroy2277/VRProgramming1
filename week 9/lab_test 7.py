@@ -80,9 +80,10 @@ class Order:
 
         self.date = (x.strftime("%Y-%m-%d %I:%M%p").lower())
 
-    def add_item(self, item):
+    def add_item(self, item: Item):
 
         self.items.append(item)
+
 
     def get_item_count(self):
 
@@ -122,6 +123,38 @@ class Order:
 
         return (total_price)
 
+    def print_items(self):
+
+        for item in self.items:
+            item.print_item()
+
+
+    def generate_reciept(self):
+
+        print("{} {:>34} {:>14} ".format('Item','Price','Taxable'))
+        print("_____________________")
+        self.print_items()
+        print("________")
+        print()
+'''
+    def generate_receipt(self,width):
+        dash = '-' * 55
+        print("Order Number : {:>10}".format(self.order_number))
+        #print("Item Number : {:>10}".format(self.get_item_count()))
+        dtime = '{:%Y-%m-%d %I:%M %p}'.format(datetime.datetime.now())
+        print("Order Date: {:>40}".format(dtime))
+        print()
+        print("{} {:>34} {:>14} ".format('Item','Price','Taxable'))
+        print(dash)
+        self.print_items(width)
+        print(dash)
+        print()
+
+'''
+
+
+
+
 
 
 
@@ -143,6 +176,7 @@ print ("Total price on the order is " + str(o.get_total_price()))
 
 # TEST
 
+order = Order()
 
 while True:
 
@@ -161,6 +195,7 @@ while True:
 
 
      new_item = Item( item_name, item_price, taxable)
+     order.add_item(new_item)
 
      Next = input("Enter Next y for yes n for no ")
      if Next == "n":
@@ -168,12 +203,16 @@ while True:
 
 
 
-
+Order.generate_reciept()
 
 
 itm1 = Item(item_name, int(item_price), item_taxable )
+
 itm1.print_item_line()
 
+itm1 = Item(item_name, int(item_price), item_taxable )
+
+itm1.print_item_line()
 
 #order.print_order()
 
