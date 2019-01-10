@@ -117,7 +117,7 @@ class Order:
 
                 total_pst = total_pst + item.get_item_prov_tax_amount()
 
-        return (total_pst)
+        return total_pst
 
     def get_total_price(self):
 
@@ -127,7 +127,7 @@ class Order:
 
             total_price = total_price + item.get_item_base_price()
 
-        return (total_price)
+        return total_price
 
     def print_items(self, width):
 
@@ -168,23 +168,22 @@ class Order:
 
         sub_total_price = "${:0.2f}".format(float(self.get_total_price()))
 
-        print("{} {:<5} ".format('Subtotal ', sub_total_price))
-
+        print('Subtotal: ', sub_total_price)
 
         total_gst = "${:0.2f}".format(float(self.get_total_gst()))
 
         total_pst = "${:0.2f}".format(float(self.get_total_pst()))
 
-        print("{} {:<5} ".format('Tax GST ', total_gst))
+        print('Tax GST: ', total_gst)
 
-        print("{} {:<5} ".format('Tax QST ', total_pst))
+        print('Tax PST: ', total_pst)
 
 
         total=self.get_total_price() + self.get_total_gst() + self.get_total_pst()
 
         total_price = "${:0.2f}".format(float(total))
 
-        print("{} {:<5} ".format('TOTAL ',  total_price))
+        print('TOTAL: ',  total_price)
 
 
 order = Order()
