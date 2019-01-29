@@ -16,3 +16,4 @@ with open(file1,"r") as file_contents:
     average = answer/line_counter
 
     print(average)
+
