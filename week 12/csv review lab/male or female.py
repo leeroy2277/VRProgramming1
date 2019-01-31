@@ -28,8 +28,9 @@ male_percentage = Male/counter
 female_percentage = Female/counter
 
 
-print("the Male percentage is: " + str(male_percentage * 100) + "%")
-print("the Female percentage is: " + str(female_percentage * 100) + "%")
+print("the Male percentage is: " + "{:0,.2f}".format(male_percentage * 100) + "%")
+print("the Female percentage is: " + "{:0,.2f}".format(female_percentage * 100) + "%")
+
 
 
 #print(percentage)
