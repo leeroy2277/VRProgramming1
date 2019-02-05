@@ -158,11 +158,13 @@ emp = Employee(1, "Brendan", "Wood", None, 75000)
 contr = Contractor(2, "Alice", "Smith", None, 78)
 task1 = Task(1, "cook Breakfast", "Cook a great breakfast", emp, 10)
 task2 = Task(2, "Make Lunch", "Lunch is important", contr, 10)
-
+task1.add_time(8)
+task2.add_time(9)
 proj1 = Project(1, "Project #1", 30)
 proj1.add_task(task1)
 proj1.add_task(task2)
 
 
-print("the total cost for project  " + proj1.get_name() + " is " + str(proj1.get_project_cost()))
+print("the total estimated cost for project  " + proj1.get_name() + " is " + str(proj1.get_project_cost()))
+print("the final cost for project  " + proj1.get_name() + " is " + str(proj1.get_project_elapsed_cost()))
 # print(emp.get_hourly_rate())
