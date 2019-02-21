@@ -1,6 +1,6 @@
 import unittest
 
-from .AddingMachineClass import *
+from AddingMachineClass import *
 
 class test_adding_machine(unittest.TestCase):
 
@@ -10,7 +10,7 @@ class test_adding_machine(unittest.TestCase):
         number2 = 3
         self.adding_machine_instance = AddingMachine(number1, number2)
 
-    def test_class(self):
+    def test_object_instantiated(self):
 
         self.assertIsNotNone(self.adding_machine_instance)
 
@@ -21,9 +21,7 @@ class test_adding_machine(unittest.TestCase):
     def test_adding_integers(self):
 
         expected = 5
+
         result = self.adding_machine_instance.add()
+
         self.assertEqual(expected, result)
-
-    def class_instantiated(self):
-
-
